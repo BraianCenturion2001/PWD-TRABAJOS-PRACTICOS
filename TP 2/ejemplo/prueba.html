@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <meta charset=”utf8″ /> 
+</head>
+<body>
+    <div class="container mt-4 mb-4">
+        <form method="get" action="frase.php" id="form" autocomplete="off">
+            <div class="row">
+                <div class="col">
+                    <label for="name">Nombre: </label>
+                    <input
+                    type="text"
+                    class="form__input form-control"
+                    placeholder="Ingrese su nombre"
+                    autocomplete="off"
+                    name="name"
+                    id="name"
+                    />
+                </div>
+
+                <div class="col">
+                    <label for="apellido">Apellido: </label>
+                    <input
+                    type="text"
+                    class="form__input form-control"
+                    placeholder="Ingrese su apellido"
+                    autocomplete="off"
+                    name="apellido"
+                    id="apellido"
+                    />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="direccion">Dirección: </label>
+                    <input
+                    type="text"
+                    class="form__input form-control"
+                    placeholder="Ingrese su dirección"
+                    autocomplete="off"
+                    name="direccion"
+                    id="direccion"
+                    />
+                </div>
+
+                <div class="col">
+                    <label for="edad">Edad: </label>
+                    <input
+                    type="number"
+                    class="form__input form-control"
+                    placeholder="Ingrese su edad"
+                    autocomplete="off"
+                    name="edad"
+                    id="edad"
+                    />
+                </div>
+            </div>
+            
+            <div class="form-group mt-4">
+                <label for="seleccion_sexo" class="form-label">Indique su sexo</label>
+                <select name="sexo" class="form-select" aria-label="select example" id="seleccion_sexo">
+                  <option selected disabled value="">Seleccione una opción...</option>
+                  <option value="masculino">Masculino</option>
+                  <option value="femenino">Femenino</option>
+                  <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="mt-4 form-group">
+                <div class="pb-1">Por favor seleccione que nivel de educación tiene</div>
+                <div class="form-check" id="educacion_radio_group" style="width: 250px">
+                    <input
+                    type="radio"
+                    value="no"
+                    class="form-check-input"
+                    id="no"
+                    name="estudios"
+                    />
+                    <label class="form-check-label" for="no">
+                    No tengo educación
+                    </label>
+                    <br />
+
+                    <input
+                    type="radio"
+                    value="primario"
+                    class="form-check-input"
+                    id="primario"
+                    name="estudios"
+                    />
+                    <label class="form-check-label" for="primario">
+                    Educación Primaria
+                    </label>
+                    <br />
+
+                    <input
+                    type="radio"
+                    value="secundario"
+                    class="form-check-input"
+                    id="secundario"
+                    name="estudios"
+                    />
+                    <label class="form-check-label" for="secundario">
+                    Educación Secundaria
+                    </label>
+                </div>
+            </div>
+
+            <div class="mt-4 form-group">
+                <div class="pb-1">Indique que deportes realiza</div>
+                <div class="form-group" id="deportes_checkbox_group" style="width: 250px">
+                    <div class="form-check">
+                        <label class="form-check-label" for="futbol">Fútbol</label>
+                        <input
+                        type="checkbox"
+                        id="futbol"
+                        class="form-check-input"
+                        value="futbol"
+                        name="deportes[]"
+                        />
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="basket">Básket</label>
+                        <input
+                        type="checkbox"
+                        id="basket"
+                        class="form-check-input"
+                        value="basket"
+                        name="deportes[]"
+                        />
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="voley">Voley</label>
+                        <input
+                        type="checkbox"
+                        id="voley"
+                        class="form-check-input"
+                        value="voley"
+                        name="deportes[]"
+                        />
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="tennis">Tennis</label>
+                        <input
+                        type="checkbox"
+                        id="tennis"
+                        class="form-check-input"
+                        value="tennis"
+                        name="deportes[]"
+                        />
+                    </div>
+                </div>
+            </div>
+        
+            <div class="d-grid mt-4">
+                <button class="btn btn-primary" type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+    <script>
+
+        const validation = new window.JustValidate('#form', {
+        errorFieldCssClass: 'is-invalid',
+        });
+
+        validation
+            .addField('#name', [
+                {
+                rule: 'minLength',
+                value: 3,
+                errorMessage: 'Debe ser mayor a 3 caracteres',
+                },
+                {
+                rule: 'maxLength',
+                value: 20,
+                errorMessage: 'Debe ser menor a 20 caracteres',
+                },
+                {
+                    rule: 'required',
+                    errorMessage: 'Este campo debe ser completado',
+                },
+            ])
+            .addField('#apellido', [
+                {
+                rule: 'minLength',
+                value: 3,
+                errorMessage: 'Debe ser mayor a 3 caracteres',
+                },
+                {
+                rule: 'maxLength',
+                value: 20,
+                errorMessage: 'Debe ser menor a 20 caracteres',
+                },
+                {
+                    rule: 'required',
+                    errorMessage: 'Este campo debe ser completado',
+                },
+            ])
+            .addField('#direccion', [
+                {
+                rule: 'minLength',
+                value: 5,
+                errorMessage: 'Debe ser mayor a 5 caracteres',
+                },
+                {
+                rule: 'maxLength',
+                value: 35,
+                errorMessage: 'Debe ser menor a 35 caracteres',
+                },
+                {
+                    rule: 'required',
+                    errorMessage: 'Este campo debe ser completado',
+                },
+            ])
+            .addField('#edad', [
+                  {
+                    rule: 'number',
+                  },
+                  {
+                    rule: 'minNumber',
+                    value: 6,
+                    errorMessage: 'Debe ser mayor a 6',
+                  },
+                  {
+                    rule: 'maxNumber',
+                    value: 90,
+                    errorMessage: 'Debe ser menor a 90',
+                  },
+                  {
+                    rule: 'required',
+                    errorMessage: 'Este campo debe ser completado',
+                },
+                ])
+            .addField('#seleccion_sexo', [
+                {
+                rule: 'required',
+                errorMessage: 'Debe elegir una opción',
+                },
+            ])
+            .addRequiredGroup(
+                '#deportes_checkbox_group',
+                'Debe seleccionar al menos un deporte',
+            )
+            .addRequiredGroup(
+                '#educacion_radio_group',
+                'Debe elegir un nivel de educación',
+            )
+            .onSuccess((event) => {
+                const form = document.getElementById('form');
+                form.submit();
+            });
+    </script>
+</body>

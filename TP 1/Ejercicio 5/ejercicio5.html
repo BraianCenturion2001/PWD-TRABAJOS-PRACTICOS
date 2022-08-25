@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <form method="get" action="fraseestudioysexo.php">
+        <label for="name">Nombre: </label>
+        <input type="text" required name="name" id="name"><br><br>
+        <label for="apellido">Apellido: </label>
+        <input type="text" required name="apellido" id="apellido"><br><br>
+        <label for="edad">Edad:  </label>
+        <input type="number" required name="edad" id="edad"><br><br>
+        <label for="dire">Dirección: </label>
+        <input type="text" required name="dire" id="dire"><br><br>
+
+        <h4>Tiene Estudios?</h4>
+        <input type="radio" id="no" name="estudios" value="no" required>
+        <label for="no">No tengo Estudios</label><br>
+        <input type="radio" id="primario" name="estudios" value="primario" required>
+        <label for="primario">Estudios Primarios</label><br>
+        <input type="radio" id="secundario" name="estudios" value="secundario" required>
+        <label for="secundario">Estudios Secundarios</label><br><br>
+
+        <label for="sexo">Indique su Sexo: </label>
+        <select name="sexo" id="sexo" required>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        </select><br><br>
+
+        <input type="submit" name="submit" value="Enviar" />
+    </form>
+</body>

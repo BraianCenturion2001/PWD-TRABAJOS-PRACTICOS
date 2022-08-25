@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <form method="get" action="frasedeporte.php">
+        <label for="name">Nombre: </label>
+        <input type="text" required name="name" id="name"><br><br>
+        <label for="apellido">Apellido: </label>
+        <input type="text" required name="apellido" id="apellido"><br><br>
+        <label for="edad">Edad:  </label>
+        <input type="number" required name="edad" id="edad"><br><br>
+        <label for="dire">Dirección: </label>
+        <input type="text" required name="dire" id="dire"><br><br>
+
+        <h4>Tiene Estudios?</h4>
+        <input type="radio" id="no" name="estudios" value="no" required>
+        <label for="no">No tengo Estudios</label><br>
+        <input type="radio" id="primario" name="estudios" value="primario" required>
+        <label for="primario">Estudios Primarios</label><br>
+        <input type="radio" id="secundario" name="estudios" value="secundario" required>
+        <label for="secundario">Estudios Secundarios</label><br><br>
+
+        <label for="sexo">Indique su Sexo: </label>
+        <select name="sexo" id="sexo" required>
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        </select><br><br>
+
+        <h4>¿Que Deportes Practica?</h4>
+        <input type="checkbox" id="futbol" value="futbol" name="deportes[]">
+        <label for="futbol">Fútbol</label><br>
+        <input type="checkbox" id="basket" value="basket" name="deportes[]">
+        <label for="basket">Básket</label><br>
+        <input type="checkbox" id="tennis" value="tennis" name="deportes[]">
+        <label for="tennis">Tennis</label><br>
+        <input type="checkbox" id="voley" value="voley" name="deportes[]">
+        <label for="voley">Voley</label><br><br>
+
+        <input type="submit" name="submit" value="Enviar" />
+    </form>
+</body>
