@@ -15,7 +15,7 @@ if ($_GET){
         case 'resta':
             $resultado = $n1 - $n2;
             break;
-        case 'multi':
+        case 'multiplicacion':
             $resultado = $n1 * $n2;
             break;
         case 'division':

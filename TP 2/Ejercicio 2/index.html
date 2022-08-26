@@ -12,18 +12,18 @@
 
 <body>
   <div class="container p-3">
-    <div class="border border-3 rounded p-2 mt-3 mb-3">
+    <div class="border bg-light border-3 rounded p-2 mt-3 mb-4">
       <h3>Ejercicio 1</h3>
       <form method="post" action="form1.php" id="form1">
         <label for="numero1" class="form-label">Ingrese un número:</label>
-        <input type="number" class="form-control mb-3" id="numero1" />
+        <input type="number" class="form-control mb-3" id="numero1" name="numero1" />
         <input class="btn btn-primary" type="submit" value="Enviar" />
       </form>
     </div>
 
-    <div class="border border-3 rounded p-2 mt-3 mb-3">
+    <div class="border bg-light border-3 rounded p-2 mt-3 mb-4">
       <h3>Ejercicio 2</h3>
-      <form method="post" action="form2.php" id="form2">
+      <form method="get" action="form2.php" id="form2">
         <div class="row mb-3">
           <div class="col">
             <label for="lunes" class="form-label">Horas Cursadas Lunes: </label>
@@ -82,7 +82,7 @@
       </form>
     </div>
 
-    <div class="border border-3 rounded p-2 mt-3 mb-3">
+    <div class="border bg-light border-3 rounded p-2 mt-3 mb-4">
       <h3>Ejercicio 3</h3>
 
       <h4>Formulario POST</h4>
@@ -192,9 +192,9 @@
       </form>
     </div>
 
-    <div class="border border-3 rounded p-2 mt-3 mb-3">
+    <div class="border bg-light border-3 rounded p-2 mt-3 mb-4">
       <h4>Ejercicio 4</h4>
-      <form method="post" action="form4.php" id="form4">
+      <form method="get" action="form4.php" id="form4">
         <div class="row mb-3">
           <div class="col">
             <label for="nombre4" class="form-label">Nombre: </label>
@@ -247,9 +247,9 @@
       </form>
     </div>
 
-    <div class="border border-3 rounded p-2 mt-3 mb-3">
+    <div class="border bg-light border-3 rounded p-2 mt-3 mb-4">
       <h4>Ejercicio 5</h4>
-      <form method="post" action="form3post.php" id="form5">
+      <form method="get" action="form5.php" id="form5">
         <div class="row mb-3">
           <div class="col-5">
             <label for="seleccion_sexo" class="form-label">Sexo: </label>
@@ -315,9 +315,9 @@
       </form>
     </div>
 
-    <div class="border border-3 rounded p-2 mt-3 mb-3">
+    <div class="border bg-light border-3 rounded p-2 mt-3 mb-4">
       <h4>Ejercicio 6</h4>
-      <form method="post" action="form6.php" id="form6">
+      <form method="get" action="form6.php" id="form6">
         <p>Seleccione los deportes que realiza:</p>
         <div class="form-group" id="deportes_checkbox_group">
           <div class="form-check form-check-inline">
@@ -366,9 +366,9 @@
       </form>
     </div>
 
-    <div class="border border-3 rounded p-2 mt-3 mb-3">
+    <div class="border bg-light border-3 rounded p-2 mt-3 mb-4">
       <h4>Ejercicio 7</h4>
-      <form method="post" action="form7.php" id="form7">
+      <form method="get" action="form7.php" id="form7">
         <div class="row mb-3">
           <div class="col">
             <label for="numero7_1" class="form-label"
@@ -414,7 +414,7 @@
               <option value="suma">Sumar</option>
               <option value="resta">Restar</option>
               <option value="division">Dividir</option>
-              <option value="multi">Multiplicar</option>
+              <option value="multiplicacion">Multiplicar</option>
             </select>
           </div>
         </div>
@@ -422,9 +422,9 @@
       </form>
     </div>
 
-    <div class="border border-3 rounded p-2 mt-3 mb-3">
+    <div class="border bg-light border-3 rounded p-2 mt-3 mb-4">
       <h4>Ejercicio 8</h4>
-      <form method="post" action="form8.php" id="form8">
+      <form method="get" action="form8.php" id="form8">
         <div class="row mb-3">
           <div class="col">
             <label for="edad8" class="form-label">Edad: </label>
@@ -466,13 +466,17 @@
       errorFieldCssClass: "is-invalid",
     });
 
-    validation1.addField("#numero1", [
-      {
-        rule: "required",
-        errorMessage: "Este campo debe ser completado",
-      },
-    ]);
-
+    validation1
+      .addField("#numero1", [
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+      ])
+      .onSuccess((event) => {
+        const form = document.getElementById("form1");
+        form.submit();
+      });
     //VALIDACION FORMULARIO 2
     const validation2 = new window.JustValidate("#form2", {
       errorFieldCssClass: "is-invalid",
@@ -598,7 +602,11 @@
           rule: "required",
           errorMessage: "Este campo debe ser completado",
         },
-      ]);
+      ])
+      .onSuccess((event) => {
+        const form = document.getElementById("form2");
+        form.submit();
+      });
 
     //VALIDACION FORMULARIO 3 MÉTODO POST
     const validation3post = new window.JustValidate("#form3post", {
@@ -672,7 +680,12 @@
           value: 30,
           errorMessage: "Debe ser menor a 30 caracteres",
         },
-      ]);
+      ])
+
+      .onSuccess((event) => {
+        const form = document.getElementById("form3post");
+        form.submit();
+      });
 
     //VALIDACION FORMULARIO 3 MÉTODO POST
 
@@ -747,7 +760,12 @@
           value: 30,
           errorMessage: "Debe ser menor a 30 caracteres",
         },
-      ]);
+      ])
+
+      .onSuccess((event) => {
+        const form = document.getElementById("form3get");
+        form.submit();
+      });
 
     //VALIDACION FORMULARIO 4
 
@@ -822,7 +840,11 @@
           value: 30,
           errorMessage: "Debe ser menor a 30 caracteres",
         },
-      ]);
+      ])
+      .onSuccess((event) => {
+        const form = document.getElementById("form4");
+        form.submit();
+      });
 
     //VALIDACION FORMULARIO 5
 
@@ -840,7 +862,11 @@
       .addRequiredGroup(
         "#estudio_radio_group",
         "Debe elegir un nivel de educación"
-      );
+      )
+      .onSuccess((event) => {
+        const form = document.getElementById("form5");
+        form.submit();
+      });
 
     //VALIDACION FORMULARIO 6
 
@@ -848,10 +874,15 @@
       errorFieldCssClass: "is-invalid",
     });
 
-    validation6.addRequiredGroup(
-      "#deportes_checkbox_group",
-      "Debe seleccionar al menos un deporte"
-    );
+    validation6
+      .addRequiredGroup(
+        "#deportes_checkbox_group",
+        "Debe seleccionar al menos un deporte"
+      )
+      .onSuccess((event) => {
+        const form = document.getElementById("form6");
+        form.submit();
+      });
 
     //VALIDACION FORMULARIO 7
 
@@ -877,7 +908,11 @@
           rule: "required",
           errorMessage: "Debe elegir una opción",
         },
-      ]);
+      ])
+      .onSuccess((event) => {
+        const form = document.getElementById("form7");
+        form.submit();
+      });
 
     //VALIDACION FORMULARIO 8
 
@@ -885,24 +920,29 @@
       errorFieldCssClass: "is-invalid",
     });
 
-    validation8.addField("#edad8", [
-      {
-        rule: "number",
-      },
-      {
-        rule: "minNumber",
-        value: 0,
-        errorMessage: "Debe ser mayor o igual a 0",
-      },
-      {
-        rule: "maxLength",
-        value: 2,
-        errorMessage: "Debe ser menor a 2 caracteres",
-      },
-      {
-        rule: "required",
-        errorMessage: "Este campo debe ser completado",
-      },
-    ]);
+    validation8
+      .addField("#edad8", [
+        {
+          rule: "number",
+        },
+        {
+          rule: "minNumber",
+          value: 0,
+          errorMessage: "Debe ser mayor o igual a 0",
+        },
+        {
+          rule: "maxLength",
+          value: 2,
+          errorMessage: "Debe ser menor a 2 caracteres",
+        },
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+      ])
+      .onSuccess((event) => {
+        const form = document.getElementById("form8");
+        form.submit();
+      });
   </script>
 </body>
