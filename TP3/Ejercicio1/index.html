@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
-    <meta charset=”utf8″ />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js%22%3E"></script>
+    <meta charset="”utf8″" />
 </head>
 
 <body>
     <div class="container mt-4 mb-4">
-        <form method="post" action="archivo.php" id="form" autocomplete="off" enctype="multipart/formdata">
+        <form method="post" action="archivo.php" id="form" autocomplete="off" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="formFile" class="form-label">Suba un archivo</label>
-                <input class="form-control" type="file" id="formFile" name="formFile">
+                <input class="form-control" type="file" id="formFile" name="formFile" />
                 <button class="btn btn-primary mt-3" type="submit">Enviar</button>
             </div>
         </form>
     </div>
     <script>
-        const validation = new window.JustValidate('#form', {
-            errorFieldCssClass: 'is-invalid',
+        const validation = new window.JustValidate("#form", {
+            errorFieldCssClass: "is-invalid",
         });
 
         validation
-            .addField('#formFile', [{
-                rule: 'required',
-                errorMessage: 'Debe subir un archivo',
+            .addField("#formFile", [{
+                rule: "required",
+                errorMessage: "Debe subir un archivo",
             }, {
-                rule: 'files',
+                rule: "files",
                 value: {
                     files: {
-                        extensions: ['doc', 'pdf'],
+                        extensions: ["doc", "pdf", "txt"],
                         maxSize: 1000000,
                     },
                 },
-                errorMessage: 'Debe subir un .pdf o un .doc menor a 2MB',
+                errorMessage: "Debe subir un .pdf o un .doc menor a 2MB",
             }, {
-                rule: 'maxFilesCount',
+                rule: "maxFilesCount",
                 value: 1,
-                errorMessage: 'Solo debe subir un unico archivo',
+                errorMessage: "Solo debe subir un unico archivo",
             }, ])
             .onSuccess((event) => {
-                const form = document.getElementById('form');
+                const form = document.getElementById("form");
                 form.submit();
             });
     </script>
-
-    <br>
-    <a href="../../index.html" class="container position-absolute" style="left:15%"><button>Volver</button></a>
 </body>

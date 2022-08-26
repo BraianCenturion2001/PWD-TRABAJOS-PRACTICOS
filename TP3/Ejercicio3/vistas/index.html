@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Cimenax</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-pencil-square" style="opacity:1;">Cinem@s</i>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Cinem@as</h4>
+                <p class="card-text">
+                    <form action="../control.php" method="post" id="formulario" enctype="multipart/form-data" onsubmit="return validarSub()">
+
+                        <div class="row">
+                            <!-- grupo de TITULO -->
+                            <div class="col-md-6">
+                                <div class="valid" id="grupo__titulo">
+                                    <label for="titulo" class="form-label">Titulo</label>
+                                    <input type="text" class="form-control " name="titulo" id="titulo" value="" required>
+                                    <i class="bi bi-check-circle">
+                                <span class="text error"><small>Dato incorrecto</small></span>
+                                <span class="text ok"><small>Ok!!</small></span>
+                              </i>
+
+                                </div>
+                            </div>
+                            <!-- grupo de ACTOR -->
+                            <div class="col-md-6">
+                                <div class="valid" id="grupo__actor">
+                                    <label for="actor" class="form-label">Actores</label>
+                                    <input type="text" class="form-control" name="actor" id="actor" value="" required>
+                                    <i class="bi bi-check-circle">
+                                  <span  class="text error"><small>Dato incorrecto</small></span>
+                                  <span  class="text ok"><small>Ok!!</small></span>
+                              </i>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- grupo de DIRECTOR -->
+                            <div class="col-md-6">
+                                <div class="valid" id="grupo__director">
+                                    <label for="director" class="form-label">Director</label>
+                                    <input type="text" class="form-control" name="director" id="director" value="" required>
+                                    <i class="bi bi-check-circle">
+                                  <span class="text error"><small>Dato incorrecto</small></span>
+                                  <span class="text ok"><small>Ok!!</small></span>
+                              </i>
+                                </div>
+                            </div>
+                            <!-- grupo de GUION -->
+                            <div class="col-md-6">
+                                <div class="valid" id="grupo__guion">
+                                    <label for="guion" class="form-label">Guión</label>
+                                    <input type="text" class="form-control" name="guion" id="guion" value="" required>
+                                    <i class="bi bi-check-circle">
+                                  <span class="text error"><small>Dato incorrecto</small></span>
+                                  <span class="text ok"><small>Ok!!</small></span>
+                              </i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- grupo de PRODUCCION -->
+                            <div class="col-md-5">
+                                <div class="valid" id="grupo__produccion">
+                                    <label for="produccion" class="form-label">Produccion</label>
+                                    <input type="text" class="form-control" name="produccion" id="produccion" value="" required>
+                                    <i class="bi bi-check-circle">
+                                  <span class="text error"><small>Dato incorrecto</small></span>
+                                  <span class="text ok"><small>Ok!!</small></span>
+                              </i>
+                                </div>
+                            </div>
+                            <!-- grupo de NACIONALIDAD -->
+                            <div class="col-md-4">
+                                <div class="valid" id="grupo__nacionalidad">
+                                    <label for="nacionalidad" class="form-label">Nacionalidad</label>
+                                    <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" value="" required>
+                                    <i class="bi bi-check-circle">
+                                  <span class="text error"><small>Dato incorrecto</small></span>
+                                  <span class="text ok"><small>Ok!!</small></span>
+                              </i>
+                                </div>
+                            </div>
+                            <!-- grupo de ANIO -->
+                            <div class="col-md-3">
+                                <div class="valid" id="grupo__anio">
+                                    <label for="anio" class="form-label">Año</label>
+                                    <input type="text" class="form-control" name="anio" id="anio" value="" required maxlength="4">
+                                    <i class="bi bi-check-circle">
+                                  <span class="text error"><small>Dato incorrecto</small></span>
+                                  <span class="text ok"><small>Ok!!</small></span>
+                              </i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- grupo de GENERO -->
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <div class="valid" id="grupo__genero">
+                                        <label for="genero" class="form-label">Genero</label>
+                                        <select class="form-control form-control-sm|form-control-lg" name="genero" id="genero" required>
+                                  <option selected disabled>Seleccionar...</option>
+                                  <option value="comedia">Comedia</option>
+                                  <option value="drama">Drama</option>
+                                  <option value="terror">Terror</option>
+                                  <option value="romantico">Romantico</option>
+                                  <option value="suspenso">Suspenso</option>
+                                  <option value="otras">Otras</option>
+                                </select>
+                                        <i class="bi bi-check-circle">
+                                  <span class="text error"><small>Dato incorrecto</small></span>
+                                  <span class="text ok"><small>Ok!!</small></span>
+                                </i>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- grupo de DURACION -->
+                            <div class="col-md-3">
+                                <div class="valid" id="grupo__duracion">
+                                    <label for="duracion" class="form-label">Duracion</label>
+                                    <input type="text" class="form-control" name="duracion" id="duracion" value="" maxlength="3" required>
+                                    <i class="bi bi-check-circle">
+                                  <span class="text error"><small>Dato incorrecto</small></span>
+                                  <span class="text ok"><small>Ok!!</small></span>
+                              </i>
+                                </div>
+                            </div>
+                            <!-- grupo de RESTRICCIONES -->
+                            <div class="col-md-6 text-center">
+
+                                <label for="edad" class="form-label">Restricciones de edad</label><br>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input edad" type="radio" name="edad" value="0" required>
+                                    <label class="form-check-label" for="">Todo Publico</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input edad" type="radio" name="edad" value="7" required>
+                                    <label class="form-check-label" for="">Mayores de 7 años</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input edad" type="radio" name="edad" value="18" required>
+                                    <label class="form-check-label" for="">Mayores de 18 años</label>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- grupo de SINAPSIS -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <div class="valid" id="grupo__sinopsis">
+                                        <label for="sinopsis" class="form-label">Sinapsis</label>
+                                        <textarea class="form-control" name="sinopsis" id="sinopsis" rows="3" required value="Hola"></textarea>
+                                        <i class="bi bi-check-circle">
+                                  <span class="text error"><small>Dato incorrecto</small></span>
+                                  <span class="text ok"><small>Ok!!</small></span>
+                            </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- grupo de FILE -->
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="file_peli" class="form-label">Subir Imagen de Pelicula</label>
+                                    <input type="file" class="form-control" name="file_peli" id="file_peli" placeholder="" aria-describedby="fileHelpId" required>
+                                    <div id="fileHelpId" class="form-text"></div>
+                                    <i class="bi bi-check-circle">
+                                  <span class="text error"><small>Dato incorrecto</small></span>
+                                  <span class="text ok"><small>Ok!!</small></span>
+                            </i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- grupo de BOTONES -->
+                        <div class="container" id="cont-botonSub">
+                            <button type="submit" id="send" class="btn btn-outline-success">Enviar</button>
+                            <button type="reset" id="reset" class="btn btn-outline-danger">Reset</button>
+                        </div>
+                    </form>
+                </p>
+            </div>
+            <div class="card-footer text-muted">
+                <img src="" alt="">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Validadores -->
+
+
+    <script src="../validador.js"></script>
+
+    <br>
+    <a href="../../../index.html" class="position-absolute btn btn-outline-danger" style="left:15%">Volver</a>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+#card-pelis {
+    margin: 1em;
+}
+
+#card-pelis ul {
+    list-style: none;
+}
+
+#card-pelis h6 {
+    margin: 1em 0em 0em 3em;
+}
+
+img {
+    margin-top: 5em;
+    width: 150px;
+    height: 120px;
+}

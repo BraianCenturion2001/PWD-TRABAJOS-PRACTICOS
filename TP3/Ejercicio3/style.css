@@ -1,0 +1,57 @@
+#cont-botonSub{
+    margin-top: 1cm;
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+}
+
+.btn{
+    border: solid;
+    width: 5cm;
+    margin: 1em;
+}
+.form-label{
+    color:black;
+}
+
+.valid i{
+    line-height: 10px;
+    margin: 5px;
+    display: flex;       
+}
+
+.valid i span{
+    margin: 0px 5px;
+}
+
+/*Estilos de validacion*/
+.bi{
+    opacity: 0;
+}
+
+.valid-correct .bi{
+    color: green;
+    opacity: 1;
+    font-weight: 600;
+}
+.valid-error .bi{
+    color: red;
+    opacity: 1;
+    font-weight: 600;
+}
+
+
+
+.text{
+    display: none;    
+}
+.text-incorrect{
+    display: block;
+    color: red;
+    opacity: 1;
+}
+.text-correct{
+    display: block;
+    color: green;
+    opacity: 1;
+}
