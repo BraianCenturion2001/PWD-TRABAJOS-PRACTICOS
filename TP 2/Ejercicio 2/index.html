@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+    crossorigin="anonymous"
+  />
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+</head>
+
+<body>
+  <div class="container p-3">
+    <div class="border border-3 rounded p-2 mt-3 mb-3">
+      <h3>Ejercicio 1</h3>
+      <form method="post" action="form1.php" id="form1">
+        <label for="numero1" class="form-label">Ingrese un número:</label>
+        <input type="number" class="form-control mb-3" id="numero1" />
+        <input class="btn btn-primary" type="submit" value="Enviar" />
+      </form>
+    </div>
+
+    <div class="border border-3 rounded p-2 mt-3 mb-3">
+      <h3>Ejercicio 2</h3>
+      <form method="post" action="form2.php" id="form2">
+        <div class="row mb-3">
+          <div class="col">
+            <label for="lunes" class="form-label">Horas Cursadas Lunes: </label>
+            <input type="number" class="form-control" name="lunes" id="lunes" />
+          </div>
+          <div class="col">
+            <label for="martes" class="form-label"
+              >Horas Cursadas Martes:
+            </label>
+            <input
+              type="number"
+              class="form-control"
+              name="martes"
+              id="martes"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="miercoles" class="form-label"
+              >Horas Cursadas Miercoles:
+            </label>
+            <input
+              type="number"
+              class="form-control"
+              name="miercoles"
+              id="miercoles"
+            />
+          </div>
+          <div class="col">
+            <label for="jueves" class="form-label"
+              >Horas Cursadas Jueves:
+            </label>
+            <input
+              type="number"
+              class="form-control"
+              name="jueves"
+              id="jueves"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="viernes" class="form-label"
+              >Horas Cursadas Viernes:
+            </label>
+            <input
+              type="number"
+              class="form-control mb-3"
+              name="viernes"
+              id="viernes"
+            />
+          </div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Enviar" />
+      </form>
+    </div>
+
+    <div class="border border-3 rounded p-2 mt-3 mb-3">
+      <h3>Ejercicio 3</h3>
+
+      <h4>Formulario POST</h4>
+      <form method="post" action="form3post.php" id="form3post">
+        <div class="row mb-3">
+          <div class="col">
+            <label for="nombre3" class="form-label">Nombre: </label>
+            <input
+              type="text"
+              class="form__input form-control"
+              placeholder="Ingrese su nombre"
+              autocomplete="off"
+              name="nombre3"
+              id="nombre3"
+            />
+          </div>
+          <div class="col">
+            <label for="apellido3" class="form-label">Apellido: </label>
+            <input
+              type="text"
+              class="form__input form-control"
+              placeholder="Ingrese su apellido"
+              autocomplete="off"
+              name="apellido3"
+              id="apellido3"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="edad3" class="form-label">Edad: </label>
+            <input
+              type="number"
+              class="form__input form-control"
+              placeholder="Ingrese su edad"
+              autocomplete="off"
+              name="edad3"
+              id="edad3"
+            />
+          </div>
+          <div class="col">
+            <label for="direccion3" class="form-label">Dirección: </label>
+            <input
+              type="text"
+              class="form__input form-control"
+              placeholder="Ingrese su dirección"
+              autocomplete="off"
+              name="direccion3"
+              id="direccion3"
+            />
+          </div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Enviar" />
+      </form>
+      <hr />
+      <h4>Formulario GET</h4>
+      <form method="get" action="form3get.php" id="form3get">
+        <div class="row mb-3">
+          <div class="col">
+            <label for="nombre3" class="form-label">Nombre: </label>
+            <input
+              type="text"
+              class="form__input form-control"
+              placeholder="Ingrese su nombre"
+              autocomplete="off"
+              name="nombre3"
+              id="nombre3"
+            />
+          </div>
+          <div class="col">
+            <label for="apellido3" class="form-label">Apellido: </label>
+            <input
+              type="text"
+              class="form__input form-control"
+              placeholder="Ingrese su apellido"
+              autocomplete="off"
+              name="apellido3"
+              id="apellido3"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="edad3" class="form-label">Edad: </label>
+            <input
+              type="number"
+              class="form__input form-control"
+              placeholder="Ingrese su edad"
+              autocomplete="off"
+              name="edad3"
+              id="edad3"
+            />
+          </div>
+          <div class="col">
+            <label for="direccion3" class="form-label">Dirección: </label>
+            <input
+              type="text"
+              class="form__input form-control"
+              placeholder="Ingrese su dirección"
+              autocomplete="off"
+              name="direccion3"
+              id="direccion3"
+            />
+          </div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Enviar" />
+      </form>
+    </div>
+
+    <div class="border border-3 rounded p-2 mt-3 mb-3">
+      <h4>Ejercicio 4</h4>
+      <form method="post" action="form4.php" id="form4">
+        <div class="row mb-3">
+          <div class="col">
+            <label for="nombre3" class="form-label">Nombre: </label>
+            <input
+              type="text"
+              class="form__input form-control"
+              placeholder="Ingrese su nombre"
+              autocomplete="off"
+              name="nombre3"
+              id="nombre3"
+            />
+          </div>
+          <div class="col">
+            <label for="apellido3" class="form-label">Apellido: </label>
+            <input
+              type="text"
+              class="form__input form-control"
+              placeholder="Ingrese su apellido"
+              autocomplete="off"
+              name="apellido3"
+              id="apellido3"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="edad3" class="form-label">Edad: </label>
+            <input
+              type="number"
+              class="form__input form-control"
+              placeholder="Ingrese su edad"
+              autocomplete="off"
+              name="edad3"
+              id="edad3"
+            />
+          </div>
+          <div class="col">
+            <label for="direccion3" class="form-label">Dirección: </label>
+            <input
+              type="text"
+              class="form__input form-control"
+              placeholder="Ingrese su dirección"
+              autocomplete="off"
+              name="direccion3"
+              id="direccion3"
+            />
+          </div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Enviar" />
+      </form>
+    </div>
+
+    <div class="border border-3 rounded p-2 mt-3 mb-3">
+      <h4>Ejercicio 5</h4>
+      <form method="post" action="form3post.php" id="form5">
+        <div class="row mb-3">
+          <div class="col-5">
+            <label for="seleccion_sexo" class="form-label">Sexo: </label>
+            <select
+              name="sexo"
+              class="form-select"
+              aria-label="select example"
+              id="seleccion_sexo"
+            >
+              <option selected disabled value="">
+                Seleccione una opción...
+              </option>
+              <option value="femenino">Femenino</option>
+              <option value="masculino">Masculino</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+          <div class="col-7">
+            <div class="pb-3">Nivel de estudio:</div>
+            <div id="estudio_radio_group">
+              <div class="form-check form-check-inline">
+                <input
+                  type="radio"
+                  value="notiene"
+                  class="form-check-input"
+                  id="notiene"
+                  name="nivel_estudio"
+                />
+                <label class="form-check-label" for="notiene">
+                  No tiene estudios
+                </label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input
+                  type="radio"
+                  value="primario"
+                  class="form-check-input"
+                  id="primario"
+                  name="nivel_estudio"
+                />
+                <label class="form-check-label" for="primario">
+                  Estudios primarios
+                </label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input
+                  type="radio"
+                  value="secundario"
+                  class="form-check-input"
+                  id="secundario"
+                  name="nivel_estudio"
+                />
+                <label class="form-check-label" for="secundario">
+                  Estudios secundarios
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Enviar" />
+      </form>
+    </div>
+
+    <div class="border border-3 rounded p-2 mt-3 mb-3">
+      <h4>Ejercicio 6</h4>
+      <form method="post" action="form6.php" id="form6">
+        <p>Seleccione los deportes que realiza:</p>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="futbol"
+            name="deportes[]"
+            id="futbol"
+          />
+          <label class="form-check-label" for="futbol"> Fútbol </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="basket"
+            name="deportes[]"
+            id="basket"
+          />
+          <label class="form-check-label" for="basket"> Básket </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="tennis"
+            name="deportes[]"
+            id="tennis"
+          />
+          <label class="form-check-label" for="tennis"> Tennis </label>
+        </div>
+        <div class="form-check form-check-inline mb-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="voley"
+            name="deportes[]"
+            id="voley"
+          />
+          <label class="form-check-label" for="voley"> Voley </label>
+        </div>
+        <br />
+        <input class="btn btn-primary" type="submit" value="Enviar" />
+      </form>
+    </div>
+
+    <div class="border border-3 rounded p-2 mt-3 mb-3">
+      <h4>Ejercicio 7</h4>
+      <form method="post" action="form7.php" id="form7">
+        <div class="row mb-3">
+          <div class="col">
+            <label for="numero7_1" class="form-label"
+              >Ingrese el primer número:
+            </label>
+            <input
+              type="number"
+              class="form__input form-control"
+              placeholder="Ingrese primer número"
+              autocomplete="off"
+              name="numero7_1"
+              id="numero7_1"
+            />
+          </div>
+          <div class="col">
+            <label for="numero7_2" class="form-label"
+              >Ingrese el segundo número:
+            </label>
+            <input
+              type="number"
+              class="form__input form-control"
+              placeholder="Ingrese segundo número"
+              autocomplete="off"
+              name="numero7_2"
+              id="numero7_2"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="seleccion_operacion" class="form-label"
+              >Operación:
+            </label>
+            <select
+              name="operacion"
+              class="form-select"
+              aria-label="select example"
+              id="seleccion_operacion"
+            >
+              <option selected disabled value="">
+                Seleccione una opción...
+              </option>
+              <option value="suma">Sumar</option>
+              <option value="resta">Restar</option>
+              <option value="division">Dividir</option>
+              <option value="multi">Multiplicar</option>
+            </select>
+          </div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Enviar" />
+      </form>
+    </div>
+
+    <div class="border border-3 rounded p-2 mt-3 mb-3">
+      <h4>Ejercicio 8</h4>
+      <form method="post" action="form8.php" id="form8">
+        <div class="row mb-3">
+          <div class="col">
+            <label for="edad" class="form-label">Edad: </label>
+            <input
+              type="number"
+              class="form__input form-control"
+              placeholder="Ingrese su edad"
+              autocomplete="off"
+              name="edad"
+              id="edad"
+            />
+          </div>
+          <div class="col">
+            <label class="form-label mb-3">Es un estudiante?</label><br />
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="estudia"
+              value="estudia"
+              id="estudia"
+            />
+            <label class="form-check-label" for="estudia">
+              Soy Estudiante
+            </label>
+          </div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Enviar" />
+      </form>
+    </div>
+
+    <form action="../../index.html">
+      <input class="btn btn-primary" type="submit" value="Inicio" />
+    </form>
+  </div>
+
+  <script></script>
+</body>
