@@ -197,49 +197,49 @@
       <form method="post" action="form4.php" id="form4">
         <div class="row mb-3">
           <div class="col">
-            <label for="nombre3" class="form-label">Nombre: </label>
+            <label for="nombre4" class="form-label">Nombre: </label>
             <input
               type="text"
               class="form__input form-control"
               placeholder="Ingrese su nombre"
               autocomplete="off"
-              name="nombre3"
-              id="nombre3"
+              name="nombre4"
+              id="nombre4"
             />
           </div>
           <div class="col">
-            <label for="apellido3" class="form-label">Apellido: </label>
+            <label for="apellido4" class="form-label">Apellido: </label>
             <input
               type="text"
               class="form__input form-control"
               placeholder="Ingrese su apellido"
               autocomplete="off"
-              name="apellido3"
-              id="apellido3"
+              name="apellido4"
+              id="apellido4"
             />
           </div>
         </div>
         <div class="row mb-3">
           <div class="col">
-            <label for="edad3" class="form-label">Edad: </label>
+            <label for="edad4" class="form-label">Edad: </label>
             <input
               type="number"
               class="form__input form-control"
               placeholder="Ingrese su edad"
               autocomplete="off"
-              name="edad3"
-              id="edad3"
+              name="edad4"
+              id="edad4"
             />
           </div>
           <div class="col">
-            <label for="direccion3" class="form-label">Dirección: </label>
+            <label for="direccion4" class="form-label">Dirección: </label>
             <input
               type="text"
               class="form__input form-control"
               placeholder="Ingrese su dirección"
               autocomplete="off"
-              name="direccion3"
-              id="direccion3"
+              name="direccion4"
+              id="direccion4"
             />
           </div>
         </div>
@@ -319,45 +319,47 @@
       <h4>Ejercicio 6</h4>
       <form method="post" action="form6.php" id="form6">
         <p>Seleccione los deportes que realiza:</p>
-        <div class="form-check form-check-inline">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value="futbol"
-            name="deportes[]"
-            id="futbol"
-          />
-          <label class="form-check-label" for="futbol"> Fútbol </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value="basket"
-            name="deportes[]"
-            id="basket"
-          />
-          <label class="form-check-label" for="basket"> Básket </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value="tennis"
-            name="deportes[]"
-            id="tennis"
-          />
-          <label class="form-check-label" for="tennis"> Tennis </label>
-        </div>
-        <div class="form-check form-check-inline mb-3">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value="voley"
-            name="deportes[]"
-            id="voley"
-          />
-          <label class="form-check-label" for="voley"> Voley </label>
+        <div class="form-group" id="deportes_checkbox_group">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="futbol"
+              name="deportes[]"
+              id="futbol"
+            />
+            <label class="form-check-label" for="futbol"> Fútbol </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="basket"
+              name="deportes[]"
+              id="basket"
+            />
+            <label class="form-check-label" for="basket"> Básket </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="tennis"
+              name="deportes[]"
+              id="tennis"
+            />
+            <label class="form-check-label" for="tennis"> Tennis </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="voley"
+              name="deportes[]"
+              id="voley"
+            />
+            <label class="form-check-label" for="voley"> Voley </label>
+          </div>
         </div>
         <br />
         <input class="btn btn-primary" type="submit" value="Enviar" />
@@ -425,14 +427,14 @@
       <form method="post" action="form8.php" id="form8">
         <div class="row mb-3">
           <div class="col">
-            <label for="edad" class="form-label">Edad: </label>
+            <label for="edad8" class="form-label">Edad: </label>
             <input
               type="number"
               class="form__input form-control"
               placeholder="Ingrese su edad"
               autocomplete="off"
-              name="edad"
-              id="edad"
+              name="edad8"
+              id="edad8"
             />
           </div>
           <div class="col">
@@ -458,5 +460,449 @@
     </form>
   </div>
 
-  <script></script>
+  <script>
+    //VALIDACION FORMULARIO 1
+    const validation1 = new window.JustValidate("#form1", {
+      errorFieldCssClass: "is-invalid",
+    });
+
+    validation1.addField("#numero1", [
+      {
+        rule: "required",
+        errorMessage: "Este campo debe ser completado",
+      },
+    ]);
+
+    //VALIDACION FORMULARIO 2
+    const validation2 = new window.JustValidate("#form2", {
+      errorFieldCssClass: "is-invalid",
+    });
+
+    validation2
+      .addField("#lunes", [
+        {
+          rule: "number",
+        },
+        {
+          rule: "minNumber",
+          value: 0,
+          errorMessage: "Debe ser mayor o igual a 0",
+        },
+        {
+          rule: "maxNumber",
+          value: 12,
+          errorMessage: "Debe ser menor o igual a 12",
+        },
+        {
+          rule: "maxLength",
+          value: 2,
+          errorMessage: "Debe ser menor a 2 caracteres",
+        },
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+      ])
+      .addField("#martes", [
+        {
+          rule: "number",
+        },
+        {
+          rule: "minNumber",
+          value: 0,
+          errorMessage: "Debe ser mayor o igual a 0",
+        },
+        {
+          rule: "maxNumber",
+          value: 12,
+          errorMessage: "Debe ser menor o igual a 12",
+        },
+        {
+          rule: "maxLength",
+          value: 2,
+          errorMessage: "Debe ser menor a 2 caracteres",
+        },
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+      ])
+      .addField("#miercoles", [
+        {
+          rule: "number",
+        },
+        {
+          rule: "minNumber",
+          value: 0,
+          errorMessage: "Debe ser mayor o igual a 0",
+        },
+        {
+          rule: "maxNumber",
+          value: 12,
+          errorMessage: "Debe ser menor o igual a 12",
+        },
+        {
+          rule: "maxLength",
+          value: 2,
+          errorMessage: "Debe ser menor a 2 caracteres",
+        },
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+      ])
+      .addField("#jueves", [
+        {
+          rule: "number",
+        },
+        {
+          rule: "minNumber",
+          value: 0,
+          errorMessage: "Debe ser mayor o igual a 0",
+        },
+        {
+          rule: "maxNumber",
+          value: 12,
+          errorMessage: "Debe ser menor o igual a 12",
+        },
+        {
+          rule: "maxLength",
+          value: 2,
+          errorMessage: "Debe ser menor a 2 caracteres",
+        },
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+      ])
+      .addField("#viernes", [
+        {
+          rule: "number",
+        },
+        {
+          rule: "minNumber",
+          value: 0,
+          errorMessage: "Debe ser mayor o igual a 0",
+        },
+        {
+          rule: "maxNumber",
+          value: 12,
+          errorMessage: "Debe ser menor o igual a 12",
+        },
+        {
+          rule: "maxLength",
+          value: 2,
+          errorMessage: "Debe ser menor a 2 caracteres",
+        },
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+      ]);
+
+    //VALIDACION FORMULARIO 3 MÉTODO POST
+    const validation3post = new window.JustValidate("#form3post", {
+      errorFieldCssClass: "is-invalid",
+    });
+
+    validation3post
+      .addField("#edad3", [
+        {
+          rule: "number",
+        },
+        {
+          rule: "minNumber",
+          value: 0,
+          errorMessage: "Debe ser mayor o igual a 0",
+        },
+        {
+          rule: "maxLength",
+          value: 2,
+          errorMessage: "Debe ser menor a 2 caracteres",
+        },
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+      ])
+      .addField("#nombre3", [
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+        {
+          rule: "minLength",
+          value: 3,
+          errorMessage: "Debe ser mayor a 3 caracteres",
+        },
+        {
+          rule: "maxLength",
+          value: 30,
+          errorMessage: "Debe ser menor a 30 caracteres",
+        },
+      ])
+      .addField("#apellido3", [
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+        {
+          rule: "minLength",
+          value: 3,
+          errorMessage: "Debe ser mayor a 3 caracteres",
+        },
+        {
+          rule: "maxLength",
+          value: 30,
+          errorMessage: "Debe ser menor a 30 caracteres",
+        },
+      ])
+      .addField("#direccion3", [
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+        {
+          rule: "minLength",
+          value: 3,
+          errorMessage: "Debe ser mayor a 3 caracteres",
+        },
+        {
+          rule: "maxLength",
+          value: 30,
+          errorMessage: "Debe ser menor a 30 caracteres",
+        },
+      ]);
+
+    //VALIDACION FORMULARIO 3 MÉTODO POST
+
+    const validation3get = new window.JustValidate("#form3get", {
+      errorFieldCssClass: "is-invalid",
+    });
+
+    validation3get
+      .addField("#edad3", [
+        {
+          rule: "number",
+        },
+        {
+          rule: "minNumber",
+          value: 0,
+          errorMessage: "Debe ser mayor o igual a 0",
+        },
+        {
+          rule: "maxLength",
+          value: 2,
+          errorMessage: "Debe ser menor a 2 caracteres",
+        },
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+      ])
+      .addField("#nombre3", [
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+        {
+          rule: "minLength",
+          value: 3,
+          errorMessage: "Debe ser mayor a 3 caracteres",
+        },
+        {
+          rule: "maxLength",
+          value: 30,
+          errorMessage: "Debe ser menor a 30 caracteres",
+        },
+      ])
+      .addField("#apellido3", [
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+        {
+          rule: "minLength",
+          value: 3,
+          errorMessage: "Debe ser mayor a 3 caracteres",
+        },
+        {
+          rule: "maxLength",
+          value: 30,
+          errorMessage: "Debe ser menor a 30 caracteres",
+        },
+      ])
+      .addField("#direccion3", [
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+        {
+          rule: "minLength",
+          value: 3,
+          errorMessage: "Debe ser mayor a 3 caracteres",
+        },
+        {
+          rule: "maxLength",
+          value: 30,
+          errorMessage: "Debe ser menor a 30 caracteres",
+        },
+      ]);
+
+    //VALIDACION FORMULARIO 4
+
+    const validation4 = new window.JustValidate("#form4", {
+      errorFieldCssClass: "is-invalid",
+    });
+
+    validation4
+      .addField("#edad4", [
+        {
+          rule: "number",
+        },
+        {
+          rule: "minNumber",
+          value: 0,
+          errorMessage: "Debe ser mayor o igual a 0",
+        },
+        {
+          rule: "maxLength",
+          value: 2,
+          errorMessage: "Debe ser menor a 2 caracteres",
+        },
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+      ])
+      .addField("#nombre4", [
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+        {
+          rule: "minLength",
+          value: 3,
+          errorMessage: "Debe ser mayor a 3 caracteres",
+        },
+        {
+          rule: "maxLength",
+          value: 30,
+          errorMessage: "Debe ser menor a 30 caracteres",
+        },
+      ])
+      .addField("#apellido4", [
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+        {
+          rule: "minLength",
+          value: 3,
+          errorMessage: "Debe ser mayor a 3 caracteres",
+        },
+        {
+          rule: "maxLength",
+          value: 30,
+          errorMessage: "Debe ser menor a 30 caracteres",
+        },
+      ])
+      .addField("#direccion4", [
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+        {
+          rule: "minLength",
+          value: 3,
+          errorMessage: "Debe ser mayor a 3 caracteres",
+        },
+        {
+          rule: "maxLength",
+          value: 30,
+          errorMessage: "Debe ser menor a 30 caracteres",
+        },
+      ]);
+
+    //VALIDACION FORMULARIO 5
+
+    const validation5 = new window.JustValidate("#form5", {
+      errorFieldCssClass: "is-invalid",
+    });
+
+    validation5
+      .addField("#seleccion_sexo", [
+        {
+          rule: "required",
+          errorMessage: "Debe elegir una opción",
+        },
+      ])
+      .addRequiredGroup(
+        "#estudio_radio_group",
+        "Debe elegir un nivel de educación"
+      );
+
+    //VALIDACION FORMULARIO 6
+
+    const validation6 = new window.JustValidate("#form6", {
+      errorFieldCssClass: "is-invalid",
+    });
+
+    validation6.addRequiredGroup(
+      "#deportes_checkbox_group",
+      "Debe seleccionar al menos un deporte"
+    );
+
+    //VALIDACION FORMULARIO 7
+
+    const validation7 = new window.JustValidate("#form7", {
+      errorFieldCssClass: "is-invalid",
+    });
+
+    validation7
+      .addField("#numero7_1", [
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+      ])
+      .addField("#numero7_2", [
+        {
+          rule: "required",
+          errorMessage: "Este campo debe ser completado",
+        },
+      ])
+      .addField("#seleccion_operacion", [
+        {
+          rule: "required",
+          errorMessage: "Debe elegir una opción",
+        },
+      ]);
+
+    //VALIDACION FORMULARIO 8
+
+    const validation8 = new window.JustValidate("#form8", {
+      errorFieldCssClass: "is-invalid",
+    });
+
+    validation8.addField("#edad8", [
+      {
+        rule: "number",
+      },
+      {
+        rule: "minNumber",
+        value: 0,
+        errorMessage: "Debe ser mayor o igual a 0",
+      },
+      {
+        rule: "maxLength",
+        value: 2,
+        errorMessage: "Debe ser menor a 2 caracteres",
+      },
+      {
+        rule: "required",
+        errorMessage: "Este campo debe ser completado",
+      },
+    ]);
+  </script>
 </body>
