@@ -31,8 +31,6 @@ include('./cinemas/Archivos.php') ?>
     <!-- FOOTER-->
         <div class="card">
         <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
         <a href="./vistas/index.html" class="btn btn-outline-warning"><i class="bi bi-arrow-left"></i>Volver</a>
         </div>
         <div class="card-footer text-muted text-center">
