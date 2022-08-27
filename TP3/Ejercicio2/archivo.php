@@ -32,6 +32,8 @@ function leerFicheroCompleto($nombre_fichero){
    
    $contenido_fichero = fread($fichero_texto, filesize("./Archivos/".$nombre_fichero));
 
+   fclose($contenido_fichero);
+
    return $contenido_fichero;
 }
 
